@@ -97,14 +97,13 @@ function commandFromFile(){
             console.log(error);
         } else {
             var dataArr = data.split(',');
-            firstCommand = dataArr[0];
-            secondCommand = dataArr[1];
-            for(i = 2; i < dataArr.length; i++){
-                secondCommand = secondCommand + "+" + dataArr[i];
-            }; 
-            run();       
+            if (dataArr[0] === 'spotify-this-song') {
+                generateSpotifyData(dataArr[1]);
+            };
+            if (dataArr[0] === 'movie-this') {
+                generateOmdbData(dataArr[1]);
+            };      
         };
     });
 };
-   
 run();
