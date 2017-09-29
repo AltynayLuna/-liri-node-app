@@ -38,8 +38,11 @@ function generateTwitterData() {
 }
 
 //Spotify
-function generateSpotifyData() {
+function generateSpotifyData(songTitle) {
     var userInput = process.argv[3];
+    if(!userInput) {
+        userInput = songTitle;
+    }
     if (!userInput) {
         userInput = 'The Sign';
     };
@@ -66,8 +69,11 @@ function generateSpotifyData() {
 };
 
 //OMDB
-function generateOmdbData() {
+function generateOmdbData(movieTitle) {
     var userInput = process.argv[3];
+    if(movieTitle) {
+        userInput = movieTitle;
+    }
     if (!userInput) {
         userInput = 'Mr. Nobody';
     };
